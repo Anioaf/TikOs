@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    background: #000;
+    font-family: sans-serif;
+}
+
+.scroller {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+video {
+    width: 100%;
+    height: 100vh;       /* видео занимает весь экран */
+    display: block;
+    object-fit: cover;   /* видео заполняет экран без искажений */
+}
+
+.info {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    color: #fff;
+    text-shadow: 0 0 5px rgba(0,0,0,0.6);
+    font-size: 16px;
+}
+
+.info #author {
+    font-weight: bold;
+    margin-bottom: 4px;
+}
