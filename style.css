@@ -1,33 +1,64 @@
+/* === Переменные === */
+:root {
+  --bg-color: #000;
+  --font-family: 'Segoe UI', sans-serif;
+  --font-size: 16px;
+  --text-color: #fff;
+  --text-shadow: 0 0 5px rgba(0,0,0,0.6);
+  --video-shadow: 0 0 10px #000;
+  --video-hover-shadow: 0 0 15px #000;
+  --video-radius: 12px;
+  --video-gap: 30px;
+}
+
+/* === Базовые настройки === */
 body {
-    margin: 0;
-    background: #000;
-    font-family: sans-serif;
+  margin: 0;
+  background-color: var(--bg-color);
+  font-family: var(--font-family);
+  color: var(--text-color);
 }
 
+/* === Скроллер === */
 .scroller {
-    height: 100vh;
-    overflow-y: scroll;
-    scroll-behavior: smooth;
+  display: flex;
+  flex-direction: column;
+  gap: var(--video-gap);
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  padding: 20px 0;
+  box-sizing: border-box;
 }
 
+/* === Видео === */
 video {
-    width: 100%;
-    height: 100vh;
-    display: block;
-    object-fit: cover;
+  width: 100%;
+  height: 100vh;
+  display: block;
+  object-fit: cover;
+  border-radius: var(--video-radius);
+  box-shadow: var(--video-shadow);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
+video:hover {
+  transform: scale(1.02);
+  box-shadow: var(--video-hover-shadow);
+}
+
+/* === Информация на видео === */
 .info {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    right: 20px;
-    color: #fff;
-    text-shadow: 0 0 5px rgba(0,0,0,0.6);
-    font-size: 16px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  color: var(--text-color);
+  text-shadow: var(--text-shadow);
+  font-size: var(--font-size);
 }
 
 .info #author {
-    font-weight: bold;
-    margin-bottom: 4px;
+  font-weight: bold;
+  margin-bottom: 4px;
 }
